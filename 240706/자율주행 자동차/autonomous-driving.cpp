@@ -7,8 +7,8 @@ int arr[50][50];
 bool used[50][50];
 int ret;
 
-int dy[] = {0, 1, 0, -1};
-int dx[] = {-1, 0, 1, 0};
+int dy[] = {-1, 0, 1, 0};
+int dx[] = {0, 1, 0, -1};
 
 int turn_left(int dir) {
     return (dir + 3) % 4;

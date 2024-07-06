@@ -43,10 +43,7 @@ void simul(int x, int y, int dir){
             if(arr[by][bx]==1) break;
             y = by;
             x = bx;
-            if(!used[by][bx]){
-                ret++;
-                used[by][bx] =1;
-            }
+            ret++;
         }
     }
 }

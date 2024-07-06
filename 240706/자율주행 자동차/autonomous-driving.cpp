@@ -22,7 +22,6 @@ void simul(int x, int y, int dir){
     used[y][x] = 1;
     while(1){
         bool ismove = 0;
-        bool canmove = 0;
         //좌 턴부터 쭈욱
         for(int i = 0; i < 4; i ++){
             int ny = y + dy[dir];
@@ -31,7 +30,7 @@ void simul(int x, int y, int dir){
             if(arr[ny][nx]==0 && !used[ny][nx]){
                 y = ny;
                 x = nx;
-                used[ny][nx] = 1; ismove = 1; canmove = 1;
+                used[ny][nx] = 1; ismove = 1;
                 ret++;
                 break;
             }
@@ -44,10 +43,11 @@ void simul(int x, int y, int dir){
             if(arr[by][bx]==1) break;
             y = by;
             x = bx;
+            if(!used[by][bx]){
+                ret++;
+                used[by][bx] =1;
+            }
         }
-        //하나라도 갈 수 있다면 반복
-        if (canmove) continue;
-        break;
     }
 }
 

@@ -26,9 +26,9 @@ void simul(int x, int y, int dir){
         bool ismove = 0;
         //좌 턴부터 쭈욱
         for(int i = 0; i < 4; i ++){
+            dir = turn_left(dir);
             int ny = y + dy[dir];
             int nx = x + dx[dir];
-            dir = turn_left(dir);
             if(arr[ny][nx]==0 && !used[ny][nx]){
                 y = ny;
                 x = nx;

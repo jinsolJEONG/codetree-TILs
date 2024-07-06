@@ -19,6 +19,7 @@ int go_back(int dir) {
 }
 
 void simul(int x, int y, int dir){
+    used[y][x] = 1;
     while(1){
         bool ismove = 0;
         //좌 턴부터 쭈욱
@@ -59,7 +60,6 @@ int main() {
         }
     }
     //s
-    used[s_y][s_x] = 1;
     simul(s_x, s_y, d_v);
     //o
     cout << ret;

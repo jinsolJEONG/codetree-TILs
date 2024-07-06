@@ -3,8 +3,8 @@ using namespace std;
 
 int n, m;
 int s_y, s_x, d_v;
-int arr[54][54];
-bool used[54][54];
+int arr[50][50];
+bool used[50][50];
 int ret;
 
 int dy[] = {0, 1, 0, -1};

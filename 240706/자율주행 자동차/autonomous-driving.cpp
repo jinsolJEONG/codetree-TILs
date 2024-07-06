@@ -50,7 +50,7 @@ void simul(int x, int y, int dir){
 
 int main() {
     //r
-
+    ret = 1;
     //i
     cin >> n >> m >> s_x >> s_y >> d_v;
     for(int i = 0; i < n; i++){
@@ -59,6 +59,7 @@ int main() {
         }
     }
     //s
+    used[s_y][s_x] = 1;
     simul(s_x, s_y, d_v);
     //o
     cout << ret;

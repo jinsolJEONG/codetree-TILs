@@ -38,7 +38,7 @@ void simul(int x, int y, int dir){
             }
         }
         //만약 턴했는데 갈 곳이 없다면?
-        if(ismove == 0){
+        if(!ismove){
             int orai = go_back(dir);
             int by = y + dy[orai];
             int bx = x + dx[orai];
@@ -53,7 +53,7 @@ void simul(int x, int y, int dir){
 
 int main() {
     //r
-
+    ret = 0;
     //i
     cin >> n >> m >> s_y >> s_x >> d_v;
     for(int i = 0; i < n; i++){
@@ -64,7 +64,7 @@ int main() {
     //s
     simul(s_x, s_y, d_v);
     //o
-    cout << ret;
+    cout << ret << '\n';
 
     return 0;
 }

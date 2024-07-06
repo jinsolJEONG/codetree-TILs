@@ -27,7 +27,7 @@ void simul(int x, int y, int dir){
             int ny = y + dy[dir];
             int nx = x + dx[dir];
             dir = turn_left(dir);
-            if(arr[ny][nx]==0 && used[ny][nx]==0){
+            if(arr[ny][nx]==0 && !used[ny][nx]){
                 y = ny;
                 x = nx;
                 used[ny][nx] = 1; ismove = 1;
@@ -53,7 +53,7 @@ int main() {
     //r
     ret = 1;
     //i
-    cin >> n >> m >> s_x >> s_y >> d_v;
+    cin >> n >> m >> s_y >> s_x >> d_v;
     for(int i = 0; i < n; i++){
         for(int j = 0; j < m; j++){
             cin >> arr[i][j];

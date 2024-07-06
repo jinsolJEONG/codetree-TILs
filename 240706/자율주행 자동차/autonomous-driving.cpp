@@ -20,6 +20,8 @@ int go_back(int dir) {
 
 void simul(int x, int y, int dir){
     used[y][x] = 1;
+    ret++;
+
     while(1){
         bool ismove = 0;
         //좌 턴부터 쭈욱
@@ -51,7 +53,7 @@ void simul(int x, int y, int dir){
 
 int main() {
     //r
-    ret = 1;
+
     //i
     cin >> n >> m >> s_y >> s_x >> d_v;
     for(int i = 0; i < n; i++){

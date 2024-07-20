@@ -11,17 +11,17 @@ int main() {
     vector<int> t(n), p(n);
     for (int i = 0; i < n; i++){
         cin >> t[i] >> p[i];
-        maxT = max(maxT, t[i]);
     } 
 
 	//s
-	vector<int> dp(maxT + 1, 0);
-    for (int i = 0; i < n; i++) 
-        for (int j = maxT; j >= t[i]; j--) 
-            dp[j] = max(dp[j], dp[j - t[i]] + p[i]);
-    for (int i = 0; i <= maxT; i++) ret = max(ret, dp[i]);
+	vector<int> dp(n + 1, 0);
+	for (int i = 0; i < n; i++) {
+        if (i + t[i] <= n) 
+			dp[i + t[i]] = max(dp[i + t[i]], dp[i] + p[i]);
+        dp[i + 1] = max(dp[i + 1], dp[i]);
+    }
 
 	//o
-    cout << ret << '\n';
+    cout << dp[n] << '\n';
     return 0;
 }
